@@ -10,3 +10,17 @@ def positive_sum(arr):
 
 
 print positive_sum(list)
+
+#Better way to solce it
+def positive_sum(arr):
+    return sum(filter(lambda x: x > 0,arr))
+
+def positive_sum(arr):
+    if not arr:
+        return 0
+    newlist = []
+    for i in arr:
+        if i > 0:
+            newlist.append(i)
+    return reduce(lambda acc,cur: acc+cur,newlist) if len(newlist) > 0 else 0
+
