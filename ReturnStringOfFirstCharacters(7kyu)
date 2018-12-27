@@ -1,0 +1,19 @@
+import unittest
+
+def make_string(s):
+    mysplit=s.split(' ')
+    return ''.join(map(lambda x : x[0],mysplit))
+
+
+print (make_string('This Is A Test'))
+
+
+
+class Testing(unittest.TestCase):
+
+    def test_correct(self):
+        self.assertEquals(make_string("This Is A Test"),"TIAT")
+
+if __name__ == "__main__":
+    unittest.main()
+
