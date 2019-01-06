@@ -1,0 +1,19 @@
+#Calculate average
+
+def find_average(array):
+    length=len(array)
+    if length != 0:
+        return sum(array)/length
+    else:
+        return 0
+
+
+from functools import reduce
+import math
+
+def find_average(array):
+    myFunc=lambda x,y:(x+y)
+    try:
+        return (reduce(myFunc,array))
+    except ZeroDivisionError:
+        return 0
