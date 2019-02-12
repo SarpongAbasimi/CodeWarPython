@@ -5,7 +5,7 @@ A node can also have links which can also be referred to as pointers.
 A node without a pointer is said to be at the end of its path.
 
 """
-
+#This is an example of a linked Node
 class MyNodes:
 
     def __init__(self,year,information,linkedNode=None):
