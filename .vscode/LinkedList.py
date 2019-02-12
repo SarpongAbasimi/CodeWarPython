@@ -96,7 +96,7 @@ class LinkedList:
                 newArray.append(current_head_node.get_value())
             current_head_node =  current_head_node.get_next_node()
         return newArray
-
+  
 
 
 
