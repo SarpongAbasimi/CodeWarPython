@@ -58,3 +58,58 @@ Depending on the language, nodes which are not referenced are removed automatica
 
 
 """
+
+class Node:
+
+    def __init__(self,value,next_node=None):
+        self._value=value
+        self._next_node = next_node
+
+    def get_value(self):
+        return self._value 
+    
+    def get_next_node(self):
+        return self._next_node
+    
+    def set_node(self,new_node):
+        self._next_node = new_node
+
+
+class LinkedList:
+
+    def __init__(self,value=None):
+        self.head_node = Node(value)
+    
+    def get_head_node(self):
+        return self.head_node
+    
+    def insert_beginning(self,new_value):
+        new_node = Node(new_value)
+        new_node.set_node(self.head_node)
+        self.head_node = new_node
+    
+    def showLinkedList(self):
+        current_head_node  =  self.get_head_node()
+        newArray = []
+        while current_head_node:
+            if current_head_node.get_value() != None:
+                newArray.append(current_head_node.get_value())
+            current_head_node =  current_head_node.get_next_node()
+        return newArray
+
+
+
+
+
+
+l = LinkedList(59)
+l.insert_beginning(499)
+l.insert_beginning(4978)
+l.insert_beginning(4910)
+l.insert_beginning(500)
+
+print(l.showLinkedList())
+
+
+
+
