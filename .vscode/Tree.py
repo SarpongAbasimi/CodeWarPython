@@ -9,4 +9,7 @@ We depict those references as lines drawn between circles.
 
 Trees are often displayed with a single node at the top and connected nodes branching downwards.
 
+#Note - When a node has no children, we refer to it as a leaf node.
+Trees grow downwards in computer science, and a root node is at the very top. The root of this tree is /photos.
+
 """
