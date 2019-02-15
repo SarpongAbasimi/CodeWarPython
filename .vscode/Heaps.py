@@ -39,4 +39,13 @@ left child: (index * 2) + 1
 right child: (index * 2) + 2
 parent: (index - 1) / 2 — not used on the root!
 
+**************
+Heaping Up ***
+**************
+# start at the last element of the list
+# while there's a parent element available:
+# if the parent element is greater:
+# swap the elements
+# set the target element index to be the parent's index
+
 """
