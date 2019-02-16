@@ -91,4 +91,18 @@ print(callan.edges)
 print(harwick.edges)
 # { 'callan': 7 }
 
+*******************
+Finding a Path II**
+*******************
+
+Our pathfinding method is almost complete. Let's take a step back and think how a 
+passenger in Harwick station could find their way to Callan.
+
+First, they'd look for all the stations connected to Harwick. If one of those stations was Callan, they're in luck!
+
+Otherwise, they would look for the connections from each of those stations excluding Harwick because 
+they've already crossed it off their list.
+
+We'll take the same strategy with our pathfinding method.
+
 """
