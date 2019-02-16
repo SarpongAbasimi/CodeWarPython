@@ -40,5 +40,55 @@ directed: Graph where travel between vertices can be restricted to a single dire
 cycle: A path which begins and ends at the same vertex.
 adjacency matrix: Graph representation where vertices are both the rows and the columns. Each cell represents a possible edge.
 adjacency list: Graph representation where each vertex has a list of all the vertices it shares an edge with.
+***************************************************************************************************************************************
+We've built a class to store information and connections between individual vertices, 
+but we need another class that keeps track of the big picture.
+
+Our Graph class will track all the vertices and handle higher level concerns like whether the graph is directed, 
+requiring edges to have a set direction, or undirected, allowing bi-directional movement across edges.
+
+We'll start by giving Graph the functionality to add vertices. 
+We'll use an internal .graph_dict property to store every vertex by its value pointing to the vertex instance itself.
+
+We want to do the following:
+
+grand_central = Vertex("Grand Central Station")
+railway = Graph()
+
+print(railway.graph_dict)
+# {}
+railway.add_vertex(grand_central)
+print(railway.graph_dict)
+# {"Grand Central Station": grand_central}
+
+
+**********************************************************************************************************
+So far our Vertex class has stored edges inside of a dictionary with keys of the connected vertex's name and the value simply set to True.
+
+We can make our implementation support edge weights with a few small changes. 
+To keep this class as flexible as possible, we'll introduce a default weight argument to .add_edge() in the Graph and Vertex classes.
+With no explicit weight argument, it will default to 0. We'll then set the appropriate value in the dictionary to that weight.
+
+Weighted edges allow us to make graphs that represent rail systems with a travel-time between stations.
+
+railway = Graph()
+
+callan = Vertex('callan')
+peel = Vertex('peel')
+harwick = Vertex('harwick')
+
+railway.add_vertex(callan)
+railway.add_vertex(peel)
+railway.add_vertex(harwick)
+
+# Travel-time between callan and peel: 12
+railway.add_edge(callan, peel, 12)
+# Travel-time between harwick and callan: 7
+railway.add_edge(harwick, callan, 7)
+
+print(callan.edges)
+# { 'peel': 12 }
+print(harwick.edges)
+# { 'callan': 7 }
 
 """
