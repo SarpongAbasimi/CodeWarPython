@@ -38,14 +38,15 @@ What links would need to be established to add a new head node to this list? Wha
 
 ********************************************************************************************************************************************
 Linked Lists Adding and Removing Nodes
-With linked lists, because nodes are linked to from only one other node, you can't just go adding and removing nodes willy-nilly without doing a bit of maintenance.
+With linked lists, because nodes are linked to from only one other node, 
+you can't just go adding and removing nodes willy-nilly without doing a bit of maintenance.
 
-Adding a new node
+#Adding a new node
 
 Adding a new node to the beginning of the list requires you to link your new node to the current head node. This way,
 you maintain your connection with the following nodes in the list.
 
-Removing a node
+#Removing a node
 
 If you accidentally remove the single link to a node, that node's data and any following nodes could be lost to your application,
 leaving you with orphaned nodes.
@@ -55,8 +56,6 @@ you need to be sure to adjust the link on the previous node so that it points to
 
 Depending on the language, nodes which are not referenced are removed automatically. 
 "Removing" a node is equivalent to removing all references to the node.
-
-
 """
 
 class Node:
@@ -97,11 +96,6 @@ class LinkedList:
             current_head_node =  current_head_node.get_next_node()
         return newArray
   
-
-
-
-
-
 l = LinkedList(59)
 l.insert_beginning(499)
 l.insert_beginning(4978)
